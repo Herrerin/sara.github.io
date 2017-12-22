@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title> ​ ​ ​ ​ ᵐᵃⁿᶜ</title>
+
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script type="text/javascript">
+
+		function startClock() {
+			var now = new Date();
+			var hor = now.getHours() < 10 ? '0' + now.getHours() : now.getHours();
+			var min = now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes();
+			document.getElementById('liveClock').innerHTML = hor + '<span>:</span>' + min;
+			// : inside span to select it in the css to make it blink
+			var reWrite = setTimeout(startClock, 1000);
+		}
+
+	</script>
+
+</head>
+<body onload="startClock()">
+
+	<div id="blackout"></div>
+	<span id="escape">[ESC] To Return</span>
+	<span id="instructionsToggle" onclick="helpToggle()">[H]</span>
+	<span id="instructions">
+		<div>
+			<table>
+				<tr>
+					<td><kbd>h</kbd></td>
+					<td>Toggle Help</td>
+				</tr>
+				<tr>
+					<td><kbd>Esc</kbd></td>
+					<td>Return to blocks</td>
+				</tr>
+				<tr>
+					<td><kbd>w</kbd><kbd>↑</kbd></td>
+					<td>Move Up</td>
+				</tr>
+				<tr>
+					<td><kbd>s</kbd><kbd>↓</kbd></td>
+					<td>Move Down</td>
+				</tr>
+				<tr>
+					<td><kbd>a</kbd><kbd>←</kbd></td>
+					<td>Move Left</td>
+				</tr>
+				<tr>
+					<td><kbd>d</kbd><kbd>→</kbd></td>
+					<td>Move Right</td>
+				</tr>
+				<tr>
+					<td><kbd>Space</kbd></td>
+					<td>Focus Search</td>
+				</tr>
+			</table>
+		</div>
+	</span>
+
+	<div id="grid">
+
+		<table>
+
+			<tr>
+				<td>
+					<a href="https://www.facebook.com/" id="1" class="lBox">
+						<img src="src/fb.png">
+						<h3>FACEBOOK</h3>
+						<p>go and waste your life asshole.</p>
+					</a>
+				</td>
+				<td>
+					<a href="https://www.netflix.com/browse" id="2" class="lBox">
+						<img src="src/n.png">
+						<h3>NETFLIX</h3>
+						<p>unhappy bastard.</p>
+					</a>
+				</td>
+				<td>
+					<a href="https://www.youtube.com/" id="3" class="lBox">
+						<img src="src/yt.png">
+						<h3>YOUTUBE</h3>
+						<p>Videos about cats.</p>
+					</a>
+				</td>
+				<td>
+					<a href="https://twitter.com/" id="4" class="lBox">
+						<img src="src/tw.png">
+						<h3>TWITTER</h3>
+						<p>Worship mayor Trapero here.</p>
+					</a>
+				</td>
+			</tr>
+
+
+			<tr>
+				<td>
+					<a href="https://boards.4chan.org/wg/" id="5" class="lBox">
+						<img src="src/4c.png">
+						<h3>4CHAN</h3>
+						<p>/wg/ Only passable board.</p>
+					</a>
+				</td>
+				<td>
+					<a href="https://mail.google.com/mail/u/0/" id="6" class="lBox">
+						<img src="src/gm.png">
+						<h3>GMAIL</h3>
+						<p>forget the letters.</p>
+					</a>
+				</td>
+				<td>
+					<a href="http://readcomiconline.to/" id="7" class="lBox">
+						<img src="src/co.png">
+						<h3>COMICS</h3>
+						<p>/co would be proud.</p>
+					</a>
+				</td>
+				<td>
+					<a href="https://www.twitch.tv/" id="8" class="lBox">
+						<img src="src/t.png">
+						<h3>twitch</h3>
+						<p>esports and shit.</p>
+					</a>
+				</td>
+			</tr>
+
+
+		</table>
+
+	</div>
+
+	<footer>
+
+		<form action="https://google.com/search" method="get">
+			<input type="text" name="q" placeholder="[Space] to search" id="search" autocomplete="off">
+		</form>
+
+		<div id="liveClock"></div>
+
+	</footer>
+
+</body>
+<script type="text/javascript" src="keys.js"></script>
+</html>
